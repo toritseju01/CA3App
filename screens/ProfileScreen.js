@@ -1,11 +1,11 @@
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const rows = [
   { icon: 'card-outline', label: 'Student ID', value: 'PAU/2021/CS/0047' },
-  { icon: 'mail-outline', label: 'Email', value: 'chika@students.pau.edu.ng' },
-  { icon: 'call-outline', label: 'Phone', value: '+234 810 419 2048' },
-  { icon: 'school-outline', label: 'Department', value: 'School of media studies' },
+  { icon: 'mail-outline', label: 'Email', value: 'GROUP3@students.pau.edu.ng' },
+  { icon: 'call-outline', label: 'Phone', value: '+234 810 000 0001' },
+  { icon: 'school-outline', label: 'Department', value: 'SMSS' },
   { icon: 'location-outline', label: 'Campus', value: 'Lekki, Lagos, Nigeria' },
 ];
 
@@ -13,9 +13,12 @@ export default function ProfileScreen() {
   return (
     <ScrollView>
       <View style={styles.header}>
-        <View style={styles.avatarCircle}><Text style={styles.avatarText}>CC</Text></View>
-        <Text style={styles.name}>Chika something</Text>
-        <Text style={styles.role}>ISMS · Year 3</Text>
+        <Image
+          source={require('../assets/group.jpg')}
+          style={styles.avatar}
+        />
+        <Text style={styles.name}>Group 1</Text>
+        <Text style={styles.role}>ISMS· CA3 Project</Text>
       </View>
       <View style={styles.body}>
         {rows.map((r) => (
@@ -33,9 +36,8 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  header: { backgroundColor: '#1a73e8', padding: 28, alignItems: 'center' },
-  avatarCircle: { width: 72, height: 72, borderRadius: 36, backgroundColor: 'rgba(255,255,255,0.3)', alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
-  avatarText: { color: '#fff', fontSize: 24, fontWeight: '600' },
+  header: { backgroundColor: '#1a73e8', padding: 24, alignItems: 'center' },
+  avatar: { width: '100%', height: 180, borderRadius: 12, marginBottom: 12, borderWidth: 2, borderColor: 'rgba(255,255,255,0.6)' },
   name: { color: '#fff', fontSize: 18, fontWeight: '600' },
   role: { color: 'rgba(255,255,255,0.8)', fontSize: 13, marginTop: 2 },
   body: { padding: 16, gap: 10 },

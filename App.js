@@ -16,7 +16,11 @@ export default function App() {
   useEffect(() => {
     fetch('https://fake-json-api.mock.beeceptor.com/users')
       .then(r => r.json())
-      .then(data => setUsers(Array.isArray(data) ? data : data.data || []))
+      .then(data => {
+        const list = Array.isArray(data) ? data : data.data || [];
+        const sorted = [...list].sort((a, b) => (a.id || 0) - (b.id || 0));
+        setUsers(sorted);
+      })
       .catch(e => console.log('Fetch error:', e));
   }, []);
 

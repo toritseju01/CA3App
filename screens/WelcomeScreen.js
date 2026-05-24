@@ -6,7 +6,7 @@ export default function WelcomeScreen() {
       <View style={styles.avatarCircle}>
   <Text style={styles.avatarEmoji}>🎓</Text>
 </View>
-      <Text style={styles.name}>Chika something</Text>
+      <Text style={styles.name}>Group 1 CA3</Text>
       <Text style={styles.sub}>ISMS · Pan-Atlantic University</Text>
 
       <View style={styles.card}>
